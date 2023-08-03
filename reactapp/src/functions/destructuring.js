@@ -1,11 +1,10 @@
-function getUserIpDetails(userResponse = {}) 
-{
-    const {userName, userIp = '0.0.0.0' } = userResponse;
+function getUserIpDetails(userResponse = {}) {
+    const { userName, userIp = '0.0.0.0' } = userResponse;
     return [userName, userIp];
 }
-function getTopThree(studentMarks = []) 
-{
-    const [firstMark = null, secondMark = null, thirdMark = null] = studentMarks;
-    return [firstMark, secondMark, thirdMark].sort();
+function getTopThree(studentMarks = []) {
+    const [first=null, second=null, third=null, ...rest] = studentMarks;
+    return [first, second, third].sort();
 }
-export { getUserIpDetails, getTopThree};
+
+export {getUserIpDetails, getTopThree};
